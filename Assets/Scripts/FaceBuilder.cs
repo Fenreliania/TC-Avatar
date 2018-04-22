@@ -4,14 +4,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FaceBuilder : MonoBehaviour {
-	public string[] elements;
+	[Serializable]
+	public struct FaceSlot
+	{
+		public string name;
+		public int depth;
+		public bool flipX;
+		public Vector2 defaultOffset, minOffset, maxOffset;
+		public float defaultScale, minScale, maxScale;
+	}
+
+	public FaceSlot[] elements;
 	public Dictionary<string, Sprite[]> elementOptions;
 
 	void Start()
 	{
-		foreach(string e in elements)
+		elementOptions = new Dictionary<string, Sprite[]>();
+		foreach(FaceSlot e in elements)
 		{
-			elementOptions.Add(e, Array.ConvertAll(Resources.LoadAll(e + "/", typeof(Sprite)), x => (Sprite)x));
+			elementOptions[e.name] = Resources.LoadAll<Sprite>(e.name);
 		}
 	}
 

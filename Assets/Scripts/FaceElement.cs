@@ -6,14 +6,16 @@ public class FaceElement {
 	public GameObject element;
 
 	SpriteRenderer sr;
+	bool flipX;
 
-	public FaceElement(Transform parent, string elementName, Sprite sprite, int depth, bool flipX, Vector2 position, float scale, Material material)
+	public FaceElement(Transform parent, string elementName, Sprite sprite, int depth, bool _flipX, Vector2 position, float scale, Material material)
 	{
 		element = new GameObject(elementName);
 		element.transform.SetParent(parent);
 		sr = element.AddComponent<SpriteRenderer>();
 		sr.material = material;
 		sr.sortingOrder = depth;
+		flipX = _flipX;
 		sr.flipX = flipX;
 		setSprite(sprite);
 		setOffset(position);
@@ -31,12 +33,12 @@ public class FaceElement {
 
 	public void setOffset(Vector2 offset)
 	{
-		element.transform.position = offset;
+		element.transform.position = flipX? new Vector2(-offset.x, offset.y) : offset;
 	}
 
 	public void setHorizontalOffset(float x)
 	{
-		element.transform.position = new Vector2(x, element.transform.position.y);
+		element.transform.position = new Vector2((flipX? -x : x), element.transform.position.y);
 	}
 
 	public void setVerticalOffset(float y)

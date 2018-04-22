@@ -15,6 +15,7 @@ public class FaceBuilder : MonoBehaviour {
 		public float defaultScale, minScale, maxScale;
 	}
 
+	public Material spriteMaterial;
 	public FaceSlot[] elements;
 	public Dictionary<string, Sprite[]> elementOptions;
 
@@ -28,10 +29,21 @@ public class FaceBuilder : MonoBehaviour {
 				elementOptions[e.assetFolder] = Resources.LoadAll<Sprite>(e.assetFolder);
 			}
 		}
+
+		createFace();
 	}
 
 	public Sprite getRandomElementSprite(string elementName)
 	{
 		return elementOptions[elementName][UnityEngine.Random.Range(0, elementOptions[elementName].Length - 1)];
+	}
+
+	public GameObject createFace()
+	{
+		GameObject faceObject = new GameObject("Face");
+		Face face = faceObject.AddComponent<Face>();
+		face.BuildFace(this, spriteMaterial);
+
+		return faceObject;
 	}
 }

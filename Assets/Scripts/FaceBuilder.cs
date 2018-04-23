@@ -41,6 +41,8 @@ public class FaceBuilder : MonoBehaviour {
 	public GameObject createFace()
 	{
 		GameObject faceObject = new GameObject("Face");
+		faceObject.transform.SetParent(transform);
+		faceObject.transform.localPosition = Vector2.zero;
 		Face face = faceObject.AddComponent<Face>();
 		face.BuildFace(this, spriteMaterial);
 

@@ -33,17 +33,17 @@ public class FaceElement {
 
 	public void setOffset(Vector2 offset)
 	{
-		element.transform.position = flipX? new Vector2(-offset.x, offset.y) : offset;
+		element.transform.localPosition = flipX? new Vector2(-offset.x, offset.y) : offset;
 	}
 
 	public void setHorizontalOffset(float x)
 	{
-		element.transform.position = new Vector2((flipX? -x : x), element.transform.position.y);
+		element.transform.localPosition = new Vector2((flipX? -x : x), element.transform.position.y);
 	}
 
 	public void setVerticalOffset(float y)
 	{
-		element.transform.position = new Vector2(element.transform.position.x, y);
+		element.transform.localPosition = new Vector2(element.transform.position.x, y);
 	}
 
 	public void setScale(float scale)

@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1509956669570056}
+  m_IsPrefabParent: 1
+--- !u!1 &1509956669570056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4639817666231830}
+  - component: {fileID: 114895886537821844}
+  m_Layer: 0
+  m_Name: Face Builder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4639817666231830
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509956669570056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.124322824, y: -0.012949463, z: -9.94043}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114895886537821844
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509956669570056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e2b03547ea30ce4993d589a6906f18e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteMaterial: {fileID: 2100000, guid: e08e172d5a926974bbffc82fbeda859e, type: 2}
+  elements:
+  - name: Head
+    assetFolder: Head
+    depth: 0
+    flipX: 0
+    defaultOffset: {x: 0, y: 0}
+    minOffset: {x: 0, y: 0}
+    maxOffset: {x: 0, y: 0}
+    defaultScale: 1
+    minScale: 1
+    maxScale: 1
+  - name: Hair
+    assetFolder: Hair
+    depth: 4
+    flipX: 0
+    defaultOffset: {x: 0, y: 0.5}
+    minOffset: {x: 0, y: 0.5}
+    maxOffset: {x: 0, y: 0.5}
+    defaultScale: 1
+    minScale: 1
+    maxScale: 1
+  - name: Hat
+    assetFolder: Hat
+    depth: 5
+    flipX: 0
+    defaultOffset: {x: 0, y: 2}
+    minOffset: {x: 0, y: 2}
+    maxOffset: {x: 0, y: 2}
+    defaultScale: 1
+    minScale: 0.5
+    maxScale: 3
+  - name: Left Eye
+    assetFolder: Eye
+    depth: 1
+    flipX: 0
+    defaultOffset: {x: -0.5, y: 0.1}
+    minOffset: {x: -0.5, y: 0.1}
+    maxOffset: {x: -0.5, y: 0.1}
+    defaultScale: 1
+    minScale: 1
+    maxScale: 1
+  - name: Right Eye
+    assetFolder: Eye
+    depth: 1
+    flipX: 1
+    defaultOffset: {x: -0.5, y: 0.1}
+    minOffset: {x: -0.5, y: 0.1}
+    maxOffset: {x: -0.5, y: 0.1}
+    defaultScale: 1
+    minScale: 1
+    maxScale: 1
+  - name: Nose
+    assetFolder: Nose
+    depth: 3
+    flipX: 0
+    defaultOffset: {x: 0, y: -0.4}
+    minOffset: {x: 0, y: -0.4}
+    maxOffset: {x: 0, y: -0.4}
+    defaultScale: 1
+    minScale: 1
+    maxScale: 1
+  - name: Mouth
+    assetFolder: Mouth
+    depth: 2
+    flipX: 0
+    defaultOffset: {x: 0, y: -1}
+    minOffset: {x: 0, y: -1}
+    maxOffset: {x: 0, y: -1}
+    defaultScale: 1
+    minScale: 1
+    maxScale: 1

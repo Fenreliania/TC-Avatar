@@ -18,6 +18,7 @@ public class FaceBuilder : MonoBehaviour {
 	public Material spriteMaterial;
 	public FaceSlot[] elements;
 	public Dictionary<string, Sprite[]> elementOptions;
+	public Face currentFace;
 
 	void Start()
 	{
@@ -43,8 +44,8 @@ public class FaceBuilder : MonoBehaviour {
 		GameObject faceObject = new GameObject("Face");
 		faceObject.transform.SetParent(transform);
 		faceObject.transform.localPosition = Vector2.zero;
-		Face face = faceObject.AddComponent<Face>();
-		face.BuildFace(this, spriteMaterial);
+		currentFace = faceObject.AddComponent<Face>();
+		currentFace.BuildFace(this, spriteMaterial);
 
 		return faceObject;
 	}

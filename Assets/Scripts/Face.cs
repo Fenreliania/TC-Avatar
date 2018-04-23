@@ -17,12 +17,34 @@ public class Face : MonoBehaviour {
 			faceElements[slot.name] = new FaceElement(
 				transform,
 				slot.name,
-				fb.elementOptions[slot.assetFolder][0],
+				fb.elementOptions[slot.name][0],
 				slot.depth,
-				slot.flipX,
+				false,
 				slot.defaultOffset,
 				slot.defaultScale,
 				spriteMaterial);
+			if (slot.mirrorX)
+			{
+				string mirrorName = slot.name + "-mirror";
+                faceElements[mirrorName] = new FaceElement(
+				transform,
+				mirrorName,
+				fb.elementOptions[slot.name][0],
+				slot.depth,
+				true,
+				slot.defaultOffset,
+				slot.defaultScale,
+				spriteMaterial);
+			}
+		}
+	}
+
+	public void UpdateSprite(FaceBuilder.FaceSlot slot, Sprite sprite)
+	{
+		faceElements[slot.name].setSprite(sprite);
+		if (slot.mirrorX)
+		{
+			faceElements[slot.name + "-mirror"].setSprite(sprite);
 		}
 	}
 }

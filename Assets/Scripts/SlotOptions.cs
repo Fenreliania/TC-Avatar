@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SlotOptions : MonoBehaviour {
 
@@ -10,10 +11,11 @@ public class SlotOptions : MonoBehaviour {
 
 	public void DisplayOptions(FaceBuilder.FaceSlot slot)
 	{
-		foreach(Sprite sprite in fb.elementOptions[slot.assetFolder])
+		foreach(Sprite sprite in fb.elementOptions[slot.name])
 		{
 			GameObject button = Instantiate(optionButtonPrefab);
-			button.GetComponent<OptionButton>().Initialise(sprite, () => fb.currentFace.faceElements[slot.name].setSprite(sprite));
+			button.GetComponent<OptionButton>().Initialise(sprite, () => fb.currentFace.UpdateSprite(slot, sprite));
+			button.transform.SetParent(optionPanel.transform);
 		}
 	}
 }

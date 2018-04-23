@@ -8,9 +8,8 @@ public class FaceBuilder : MonoBehaviour {
 	public struct FaceSlot
 	{
 		public string name;
-		public string assetFolder;
 		public int depth;
-		public bool flipX;
+		public bool mirrorX;
 		public Vector2 defaultOffset, minOffset, maxOffset;
 		public float defaultScale, minScale, maxScale;
 	}
@@ -19,19 +18,22 @@ public class FaceBuilder : MonoBehaviour {
 	public FaceSlot[] elements;
 	public Dictionary<string, Sprite[]> elementOptions;
 	public Face currentFace;
+	public SlotOptions so;
 
 	void Start()
 	{
 		elementOptions = new Dictionary<string, Sprite[]>();
 		foreach(FaceSlot e in elements)
 		{
-			if (!elementOptions.ContainsKey(e.assetFolder))
+			if (!elementOptions.ContainsKey(e.name))
 			{
-				elementOptions[e.assetFolder] = Resources.LoadAll<Sprite>(e.assetFolder);
+				elementOptions[e.name] = Resources.LoadAll<Sprite>(e.name);
 			}
 		}
 
 		createFace();
+
+		so.DisplayOptions(elements[3]);
 	}
 
 	public Sprite getRandomElementSprite(string elementName)

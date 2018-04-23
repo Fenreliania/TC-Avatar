@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1509956669570056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.124322824, y: -0.012949463, z: -9.94043}
+  m_LocalPosition: {x: 4.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,9 +54,8 @@ MonoBehaviour:
   spriteMaterial: {fileID: 2100000, guid: e08e172d5a926974bbffc82fbeda859e, type: 2}
   elements:
   - name: Head
-    assetFolder: Head
     depth: 0
-    flipX: 0
+    mirrorX: 0
     defaultOffset: {x: 0, y: 0}
     minOffset: {x: 0, y: 0}
     maxOffset: {x: 0, y: 0}
@@ -64,9 +63,8 @@ MonoBehaviour:
     minScale: 1
     maxScale: 1
   - name: Hair
-    assetFolder: Hair
     depth: 4
-    flipX: 0
+    mirrorX: 0
     defaultOffset: {x: 0, y: 0.5}
     minOffset: {x: 0, y: 0.5}
     maxOffset: {x: 0, y: 0.5}
@@ -74,29 +72,17 @@ MonoBehaviour:
     minScale: 1
     maxScale: 1
   - name: Hat
-    assetFolder: Hat
     depth: 5
-    flipX: 0
+    mirrorX: 0
     defaultOffset: {x: 0, y: 2}
     minOffset: {x: 0, y: 2}
     maxOffset: {x: 0, y: 2}
     defaultScale: 1
     minScale: 0.5
     maxScale: 3
-  - name: Left Eye
-    assetFolder: Eye
+  - name: Eye
     depth: 1
-    flipX: 0
-    defaultOffset: {x: -0.5, y: 0.1}
-    minOffset: {x: -0.5, y: 0.1}
-    maxOffset: {x: -0.5, y: 0.1}
-    defaultScale: 1
-    minScale: 1
-    maxScale: 1
-  - name: Right Eye
-    assetFolder: Eye
-    depth: 1
-    flipX: 1
+    mirrorX: 1
     defaultOffset: {x: -0.5, y: 0.1}
     minOffset: {x: -0.5, y: 0.1}
     maxOffset: {x: -0.5, y: 0.1}
@@ -104,9 +90,8 @@ MonoBehaviour:
     minScale: 1
     maxScale: 1
   - name: Nose
-    assetFolder: Nose
     depth: 3
-    flipX: 0
+    mirrorX: 0
     defaultOffset: {x: 0, y: -0.4}
     minOffset: {x: 0, y: -0.4}
     maxOffset: {x: 0, y: -0.4}
@@ -114,12 +99,13 @@ MonoBehaviour:
     minScale: 1
     maxScale: 1
   - name: Mouth
-    assetFolder: Mouth
     depth: 2
-    flipX: 0
+    mirrorX: 0
     defaultOffset: {x: 0, y: -1}
     minOffset: {x: 0, y: -1}
     maxOffset: {x: 0, y: -1}
     defaultScale: 1
     minScale: 1
     maxScale: 1
+  currentFace: {fileID: 0}
+  so: {fileID: 0}

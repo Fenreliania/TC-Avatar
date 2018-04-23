@@ -18,7 +18,7 @@ public class FaceBuilder : MonoBehaviour {
 	public FaceSlot[] elements;
 	public Dictionary<string, Sprite[]> elementOptions;
 	public Face currentFace;
-	public SlotOptions so;
+	public Slots slots;
 
 	void Start()
 	{
@@ -33,7 +33,7 @@ public class FaceBuilder : MonoBehaviour {
 
 		createFace();
 
-		so.DisplayOptions(elements[3]);
+		slots.DisplaySlots();
 	}
 
 	public Sprite getRandomElementSprite(string elementName)

@@ -21,7 +21,7 @@ public class Face : MonoBehaviour {
 				slot.depth,
 				false,
 				slot.defaultOffset,
-				slot.defaultScale,
+				1f,
 				spriteMaterial);
 			if (slot.mirrorX)
 			{
@@ -33,7 +33,7 @@ public class Face : MonoBehaviour {
 				slot.depth,
 				true,
 				slot.defaultOffset,
-				slot.defaultScale,
+				1f,
 				spriteMaterial);
 			}
 		}
@@ -45,6 +45,51 @@ public class Face : MonoBehaviour {
 		if (slot.mirrorX)
 		{
 			faceElements[slot.name + "-mirror"].setSprite(sprite);
+		}
+	}
+
+	public void UpdateOffset(FaceBuilder.FaceSlot slot, Vector2 newOffset)
+	{
+		faceElements[slot.name].setOffset(newOffset);
+		if (slot.mirrorX)
+		{
+			faceElements[slot.name + "-mirror"].setOffset(newOffset);
+		}
+	}
+
+	public void UpdateHorizontalOffset(FaceBuilder.FaceSlot slot, float newX)
+	{
+		faceElements[slot.name].setHorizontalOffset(newX);
+		if (slot.mirrorX)
+		{
+			faceElements[slot.name + "-mirror"].setHorizontalOffset(newX);
+		}
+	}
+
+	public void UpdateVerticalOffset(FaceBuilder.FaceSlot slot, float newY)
+	{
+		faceElements[slot.name].setVerticalOffset(newY);
+		if (slot.mirrorX)
+		{
+			faceElements[slot.name + "-mirror"].setVerticalOffset(newY);
+		}
+	}
+
+	public void UpdateScale(FaceBuilder.FaceSlot slot, float scale)
+	{
+		faceElements[slot.name].setScale(scale);
+		if (slot.mirrorX)
+		{
+			faceElements[slot.name + "-mirror"].setScale(scale);
+		}
+	}
+
+	public void UpdateTint(FaceBuilder.FaceSlot slot, Color tint)
+	{
+		faceElements[slot.name].setTint(tint);
+		if (slot.mirrorX)
+		{
+			faceElements[slot.name + "-mirror"].setTint(tint);
 		}
 	}
 }

@@ -9,9 +9,11 @@ public class OptionButton : MonoBehaviour {
 	public Image icon;
 	public Button button;
 
-	public void Initialise(Sprite image, UnityAction onClick)
+	public void Initialise(Sprite image, UnityAction onClick, float scale, Color tint)
 	{
 		icon.sprite = image;
+		icon.transform.localScale = Vector2.one * scale;
+		icon.material.SetColor("_Tint", tint);
 		button.onClick.AddListener(onClick);
 	}
 }

@@ -38,12 +38,12 @@ public class FaceElement {
 
 	public void setHorizontalOffset(float x)
 	{
-		element.transform.localPosition = new Vector2((flipX? -x : x), element.transform.position.y);
+		element.transform.localPosition = new Vector2((flipX? -x : x), element.transform.localPosition.y);
 	}
 
 	public void setVerticalOffset(float y)
 	{
-		element.transform.localPosition = new Vector2(element.transform.position.x, y);
+		element.transform.localPosition = new Vector2(element.transform.localPosition.x, y);
 	}
 
 	public void setScale(float scale)
@@ -54,5 +54,10 @@ public class FaceElement {
 	public void removeSprite()
 	{
 		sr.sprite = null;
+	}
+
+	public Sprite getCurrentSprite()
+	{
+		return sr.sprite;
 	}
 }

@@ -11,14 +11,13 @@ public class FaceBuilder : MonoBehaviour {
 		public int depth;
 		public bool mirrorX;
 		public Vector2 defaultOffset, minOffset, maxOffset;
-		public float defaultScale, minScale, maxScale;
 	}
 
 	public Material spriteMaterial;
 	public FaceSlot[] elements;
 	public Dictionary<string, Sprite[]> elementOptions;
 	public Face currentFace;
-	public Slots slots;
+	public SlotsPanel slots;
 
 	void Start()
 	{

@@ -13,7 +13,7 @@ public class OptionButton : MonoBehaviour {
 	{
 		icon.sprite = image;
 		icon.transform.localScale = Vector2.one * scale;
-		icon.material.SetColor("_Tint", tint);
+		icon.color = tint;
 		button.onClick.AddListener(onClick);
 	}
 }

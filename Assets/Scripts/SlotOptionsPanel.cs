@@ -31,7 +31,7 @@ public class SlotOptionsPanel : MonoBehaviour {
 			{
 				faceBuilder.currentFace.UpdateSprite(slot, sprite);
 				DisplayOptions(slot, options);
-			}, 1f, Color.white);
+			}, 1f, faceBuilder.currentFace.faceElements[slot.name].getCurrentTint());
 		}
 
 		RenderOptions(slot, options);

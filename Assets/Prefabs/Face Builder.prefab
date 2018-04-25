@@ -59,53 +59,35 @@ MonoBehaviour:
     defaultOffset: {x: 0, y: 0}
     minOffset: {x: 0, y: 0}
     maxOffset: {x: 0, y: 0}
-    defaultScale: 1
-    minScale: 1
-    maxScale: 1
   - name: Hair
     depth: 4
     mirrorX: 0
     defaultOffset: {x: 0, y: 0.5}
     minOffset: {x: 0, y: 0.5}
     maxOffset: {x: 0, y: 0.5}
-    defaultScale: 1
-    minScale: 1
-    maxScale: 1
   - name: Hat
     depth: 5
     mirrorX: 0
     defaultOffset: {x: 0, y: 2}
-    minOffset: {x: 0, y: 1.9}
-    maxOffset: {x: 0, y: 2.1}
-    defaultScale: 1
-    minScale: 0.5
-    maxScale: 3
+    minOffset: {x: 0, y: 1.7}
+    maxOffset: {x: 0, y: 2.2}
   - name: Eye
     depth: 1
     mirrorX: 1
     defaultOffset: {x: -0.5, y: 0.1}
     minOffset: {x: -0.75, y: -0.1}
     maxOffset: {x: -0.25, y: 0.3}
-    defaultScale: 1
-    minScale: 1
-    maxScale: 1
   - name: Nose
     depth: 3
     mirrorX: 0
     defaultOffset: {x: 0, y: -0.4}
-    minOffset: {x: 0, y: -0.5}
-    maxOffset: {x: 0, y: -0.3}
-    defaultScale: 1
-    minScale: 1
-    maxScale: 1
+    minOffset: {x: 0, y: -0.75}
+    maxOffset: {x: 0, y: -0.2}
   - name: Mouth
     depth: 2
     mirrorX: 0
     defaultOffset: {x: 0, y: -1}
-    minOffset: {x: 0, y: -1}
-    maxOffset: {x: 0, y: -1}
-    defaultScale: 1
-    minScale: 1
-    maxScale: 1
+    minOffset: {x: 0, y: -1.2}
+    maxOffset: {x: 0, y: -0.9}
   currentFace: {fileID: 0}
   slots: {fileID: 0}

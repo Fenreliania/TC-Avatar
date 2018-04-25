@@ -28,7 +28,7 @@ public class FaceElement {
 
 	public void setTint(Color colour)
 	{
-		sr.material.SetColor("_Tint", colour);
+		sr.material.SetColor("_Color", colour);
 	}
 
 	public void setOffset(Vector2 offset)
@@ -59,5 +59,10 @@ public class FaceElement {
 	public Sprite getCurrentSprite()
 	{
 		return sr.sprite;
+	}
+
+	public Color getCurrentTint()
+	{
+		return sr.material.GetColor("_Color");
 	}
 }

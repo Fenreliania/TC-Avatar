@@ -39,6 +39,19 @@ public class Face : MonoBehaviour {
 		}
 	}
 
+	public void RandomiseFace()
+	{
+		foreach (FaceBuilder.FaceSlot slot in fb.elements)
+		{
+			int elementId = Random.Range(0, fb.elementOptions[slot.name].Length);
+            faceElements[slot.name].setSprite(fb.elementOptions[slot.name][elementId]);
+			if (slot.mirrorX)
+			{
+				faceElements[slot.name + "-mirror"].setSprite(fb.elementOptions[slot.name][elementId]);
+			}
+		}
+    }
+
 	public void UpdateSprite(FaceBuilder.FaceSlot slot, Sprite sprite)
 	{
 		faceElements[slot.name].setSprite(sprite);

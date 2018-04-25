@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SlotsPanel : MonoBehaviour {
 	[System.Serializable]
@@ -16,6 +17,7 @@ public class SlotsPanel : MonoBehaviour {
 	public GameObject buttonPrefab;
 	public GameObject slotPanel;
 	public SlotOptionsPanel slotOptionsPanel;
+	public Button randomiseButton;
 
 	public SlotOptions[] slotOptions;
 	Dictionary<string, SlotOptions> _slotOptionsCache;
@@ -27,6 +29,7 @@ public class SlotsPanel : MonoBehaviour {
 		{
 			_slotOptionsCache[options.name] = options;
 		}
+		randomiseButton.onClick.AddListener(() => faceBuilder.currentFace.RandomiseFace());
 	}
 
 	public void DisplaySlots()
